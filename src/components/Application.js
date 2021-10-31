@@ -60,13 +60,7 @@ export default function Application(props) {
             onChange={setDay}
           />
         </nav>
-        {/* <nav  className="sidebar__menu">
-          <InterviewerList
-            interviewers={interviewers}
-            interviewer={interviewer}
-            setInterviewer={setInterviewer}
-          />
-        </nav> */}
+      
         <img
           className="sidebar__lhl sidebar--centered"
           src="images/lhl.png"
