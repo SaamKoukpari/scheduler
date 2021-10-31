@@ -13,17 +13,17 @@ export function getAppointmentsForDay(state, dayName) {
 }
 
 export function getInterview(state, interview) {
-  const resultObj = { student: null, interviewer: null };
+  const interviewerObj = { student: null, interviewer: null };
   if (interview) {
-    resultObj.student = interview.student;
+    interviewerObj.student = interview.student;
     for (const interviewer in state.interviewers) {
       if (state.interviewers[interviewer].id === interview.interviewer) {
-        resultObj.interviewer = state.interviewers[interviewer];
+        interviewerObj.interviewer = state.interviewers[interviewer];
       }
     }
   }
-  if (resultObj.student) {
-    return resultObj;
+  if (interviewerObj.student) {
+    return interviewerObj;
   }
   return null;
 }
