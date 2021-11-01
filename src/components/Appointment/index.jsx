@@ -2,8 +2,8 @@ import React from "react";
 import "components/Appointment/styles.scss";
 import useVisualMode from "hooks/useVisualMode";
 import Form from "./Form";
-import Header from "components/Appointment/Header.js"
-import Show from "components/Appointment/Show.js"
+import Header from "components/Appointment/Header.jsx"
+import Show from "components/Appointment/Show.jsx"
 import Empty from "./Empty";
 
 const EMPTY = "EMPTY";
