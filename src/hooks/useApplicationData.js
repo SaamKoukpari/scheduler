@@ -54,11 +54,24 @@ function cancelInterview(id) {
 
 const setDay = day => setState({ ...state, day })
 
-// function updateSpots (dayName, days, appointments) {
-//   const getDayId =   
+const updateSpots = function (state, appointments) {
 
+  const findDay = state.days.find(d => d.name === state.day);
+  let spots = 0;
 
-// }
+  for (const id of findDay.appointments) {
+    const appointmentID = appointments[id];
+     
+    if (!appointmentID.interview) {
+      spots++;
+    }
+  }
 
-return { state, setDay, bookInterview, cancelInterview }
+  const newDay = { ...findDay, spots }
+  const newDays = state.days.map(d => d.name === state.day ? newDay : d);
+  
+  return newDays;
+};
+
+return { state, setDay, bookInterview, cancelInterview, updateSpots }
 };
