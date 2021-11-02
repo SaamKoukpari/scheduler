@@ -2,10 +2,10 @@ import React from "react";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import "components/Application.scss";
-import DayList from "./DayList";
-import InterviewerList from "./InterviewerList";
+import DayList from "./DayList.jsx";
 import Appointment from "components/Appointment/index.jsx";
 import { getAppointmentsForDay, getInterview, getInterviewersForDay } from "helpers/selectors";
+
 
 export default function Application(props) {
   const [state, setState] = useState({
@@ -14,8 +14,8 @@ export default function Application(props) {
     appointments: {},
     interviewers: {},
   });
- 
-
+  
+  
   useEffect(() => {
     Promise.all([
       axios.get("/api/days"),
@@ -28,18 +28,54 @@ export default function Application(props) {
       setState(prev => ({...prev, days, appointments, interviewers }));
     })
   }, [])
+  
+  function bookInterview(id, interview) {
+    const appointment = {
+      ...state.appointments[id],
+      interview: { ...interview }
+    };
+    const appointments = {
+      ...state.appointments,
+      [id]: appointment
+    };
+    return axios.put(`/api/appointments/${id}`, { interview })
+    .then(response => {
+      setState({...state, appointments})
+    });
+  }
 
+  function cancelInterview(id) {
+    const appointment = {
+      ...state.appointments[id],
+      interview: null 
+    };
+    const appointments = {
+      ...state.appointments,
+      [id]: appointment
+    };
+    return axios.delete(`/api/appointments/${id}`)
+    .then(response => {
+      setState({...state, appointments})
+    })
+  }
+
+
+  
   const setDay = day => setState({ ...state, day });
 
   const dailyInterviewers = getInterviewersForDay(state, state.day);
   
   const dailyAppointments = getAppointmentsForDay(state, state.day).map(
     (appointment) => {
+  
     return (
-      <Appointment 
-        key={appointment.id} {...appointment}
+      <Appointment
+        key={appointment.id}
+            {...appointment}
         interviewers={dailyInterviewers}
         interview={getInterview(state, appointment.interview)}
+        bookInterview={bookInterview}
+        cancelInterview={cancelInterview}
       />
     );
   });

@@ -6,11 +6,11 @@ import { Fragment } from "react";
 
 import "index.scss";
 
-import Button from "components/Button";
-import DayListItem from "components/DayListItem";
-import DayList from "components/DayList";
-import InterviewerListItem from "components/InterviewerListItem";
-import InterviewerList from "components/InterviewerList"; 
+import Button from "components/Button.jsx";
+import DayListItem from "components/DayListItem.jsx";
+import DayList from "components/DayList.jsx";
+import InterviewerListItem from "components/InterviewerListItem.jsx";
+import InterviewerList from "components/InterviewerList.jsx"; 
 import Appointment from "components/Appointment/index.jsx";
 import Header from "components/Appointment/Header.jsx";
 import Empty from "components/Appointment/Empty.jsx";
