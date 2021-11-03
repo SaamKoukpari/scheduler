@@ -1,8 +1,18 @@
 # Interview Scheduler
 
+This project introduced us to the React framework and is designed to enable students to book interviews with listed mentors from an api database. Students can select from a list of available weekdays, choose an available time slot and select the mentor they'd like to book an interview with.
+
 ## Setup
 
 Install dependencies with `npm install`.
+
+## Final Product
+
+!["book interview screenshot"](https://github.com/SaamKoukpari/scheduler/blob/master/docs/BookInterview.png?raw=true)
+
+!["home page screenshot"](https://github.com/SaamKoukpari/scheduler/blob/master/docs/HomePage.png?raw=true)
+
+!["select day screenshot"](https://github.com/SaamKoukpari/scheduler/blob/master/docs/SelectDay.png?raw=true) 
 
 ## Running Webpack Development Server
 
