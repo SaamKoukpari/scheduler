@@ -1,6 +1,6 @@
 # Interview Scheduler
 
-This project introduced us to the React framework and is designed to enable students to book interviews with listed mentors from an api database. Students can select from a list of available weekdays, choose an available time slot and select the mentor they'd like to book an interview with.
+This project introduced us to the React framework and is designed to enable students to book interviews with listed mentors from an api database. It is a single page app where students can select from a list of available weekdays, choose an available time slot and select the mentor they'd like to book an interview with. Tested with Jest and Cypress, users can also edit/delete booked interviews in a responsive manner. 
 
 ## Setup
 
