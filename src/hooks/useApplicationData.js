@@ -32,8 +32,12 @@ function bookInterview(id, interview) {
     [id]: appointment
   };
   return axios.put(`/api/appointments/${id}`, { interview })
-  .then(response => {
+  .then(res => {
     setState({...state, appointments})
+  })
+  .then(() => axios.get('/api/days'))
+  .then((res) => {
+    setState(prev => ({...prev, days: res.data}))
   });
 }
 
@@ -50,6 +54,10 @@ function cancelInterview(id) {
   .then(response => {
     setState({...state, appointments})
   })
+  .then(() => axios.get('/api/days'))
+  .then((res) => {
+    setState(prev => ({...prev, days: res.data}))
+  });
 }
 
 const setDay = day => setState({ ...state, day })
