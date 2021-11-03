@@ -34,6 +34,11 @@ export default function Form(props) {
 
     setError("");
 
+    if (!interviewer) {
+      setError("Please pick an interviewer");
+      return;
+    }
+
     if (interviewer && interviewer.id) {
       props.onSave(student, interviewer.id)
     }
