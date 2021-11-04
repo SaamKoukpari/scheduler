@@ -14,6 +14,8 @@ Install dependencies with `npm install`.
 
 !["select day screenshot"](https://github.com/SaamKoukpari/scheduler/blob/master/docs/SelectDay.png?raw=true) 
 
+!["delete screenshot"](https://github.com/SaamKoukpari/scheduler/blob/master/docs/Delete.png?raw=true) 
+
 ## Running Webpack Development Server
 
 ```sh
