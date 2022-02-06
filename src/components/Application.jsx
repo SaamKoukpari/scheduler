@@ -18,7 +18,7 @@ export default function Application() {
   
   const dailyAppointments = getAppointmentsForDay(state, state.day).map(
     (appointment) => {
-  console.log("appointment:", appointment)
+  // console.log("appointment:", appointment)
     return (
       <Appointment
         key={appointment.id}
@@ -60,4 +60,4 @@ export default function Application() {
       </section>
     </main>
   );
-}
+};
